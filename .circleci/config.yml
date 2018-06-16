@@ -5,7 +5,7 @@ jobs:
       - image: debian:stretch
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
           docker_layer_caching: true
       - run: (cd centos && docker build -t bbyars/mountebank-centos:latest .)
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
