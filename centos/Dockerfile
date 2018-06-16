@@ -5,6 +5,7 @@ LABEL maintainer Brandon Byars <brandon.byars@gmail.com>
 RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - \
     && yum -y install nodejs \
     && yum -y install ruby \
-    && useradd -ms /bin/bash  developer
+    && gem install bundler --no-ri --no-rdoc \
+    && useradd -ms /bin/bash developer
 
 USER developer
