@@ -9,4 +9,4 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - \
 
 USER developer
 
-RUN PATH=$PATH:/home/developer/bin  # not sure why rubygems doesn't do this when it installs
+ENV PATH="${PATH}:/home/developer/bin"
