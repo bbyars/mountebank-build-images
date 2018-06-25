@@ -19,6 +19,8 @@ RUN curl https://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.4.tar.gz -o /tmp/ruby
     && make \
     && make install \
     && gem install bundler --no-ri --no-rdoc \
-    && rm -rf /tmp/*
+    && rm -rf /tmp/* \
+    && chown -R developer:developer /usr/local/lib/ruby/gems \
+    && chown -R developer:developer /usr/local/bin
 
 USER developer
